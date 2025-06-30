@@ -1,5 +1,5 @@
 name: PHP Composer
-description: "A small exercise"
+description: A small exercise
 
 on:
   push:
@@ -20,6 +20,7 @@ jobs:
 
     - name: Validate composer.json and composer.lock
       run: composer validate
+      description: composer validation
 
     - name: Cache Composer packages
       id: composer-cache
