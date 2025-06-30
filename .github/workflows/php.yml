@@ -40,11 +40,11 @@ jobs:
     #   run: composer run-script test
 
     - name: Run PHPUnit tests
-      run: vendor/bin/phpunit
+      run: vendor/bin/phpunit tests --log-junit junit.xml
 
-    # - name: Upload test results
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: phpunit-junit-report
-    #     path: junit.xml
-    #     description: PHPUnit test results in JUnit XML format
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: phpunit-junit-report
+        path: junit.xml
+        description: PHPUnit test results in JUnit XML format
